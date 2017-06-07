@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城市选择的三种实现</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>
+    <fieldset>
+        <legend>方法一：下拉选择框实现省市区（县）三级联动</legend>
+        <form action="#">
+            <label for="addr-show">您选择的是：
+                <input type="text" value="" id="addr-show">
+            </label>
+            <br/>
+
+            <!--省份选择-->
+            <select id="prov" onchange="showCity(this)">
+                <option>=请选择省份=</option>
+
+            </select>
+
+            <!--城市选择-->
+            <select id="city" onchange="showCountry(this)">
+                <option>=请选择城市=</option>
+            </select>
+
+            <!--县区选择-->
+            <select id="country" onchange="selecCountry(this)">
+                <option>=请选择县区=</option>
+            </select>
+            <button type="button" class="btn met1" onClick="showAddr()">确定</button>
+        </form>
+    </fieldset>
+</div>
+<!--**********************************华丽丽*************************************-->
+
+<div>
+    <fieldset>
+        <legend>方法二：按级选中省市县/区</legend>
+        <label for="addr-show02">您选择的是：
+            <input type="text" id="addr-show02">
+        </label>
+        <div id="addr-choice">
+            <ul id="title-wrap">
+                <li value="0">省份</li>
+                <li value="1">城市</li>
+                <li value="2">县区</li>
+            </ul>
+            <div id="show-panel">
+                <ul id="addr-wrap">
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn met2">确定</button>
+    </fieldset>
+</div>
+<!--**********************************华丽丽*************************************-->
+<div>
+    <fieldset>
+        <legend>方法三：按字母顺序选中城市</legend>
+        <label for="addr-show03">您选择的是：
+            <input type="text" id="addr-show03">
+        </label>
+        <div id="data-wrap">
+            <ul id="data-order">
+                <li value='0'>热门</li>
+                <li value='1'>ABCD</li>
+                <li value='2'>EFGH</li>
+                <li value='3'>JKLM</li>
+                <li value='4'>NPQR</li>
+                <li value='5'>STWX</li>
+                <li value='6'>YZ</li>
+            </ul>
+            <div id="data-show"></div>
+        </div>
+    </fieldset>
+</div>
+
+<script src="city.js"></script>
+<script src="city02.js"></script>
+
+<script src="method01.js"></script>
+<script src="method02.js"></script>
+<script src="method03.js"></script>
+</body>
+</html>
