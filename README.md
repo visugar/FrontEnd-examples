@@ -7,6 +7,6 @@
 + 方式二：按级选中省市区
 + 方式三：此方法不属于联动，而是根据字母顺序来直接选中城市名称，使用的城市数据也是从网上找的，不能保证真实性
 
-> [代码地址]()
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/01%E7%9C%81%E5%B8%82%E5%8C%BA%E4%B8%89%E7%BA%A7%E8%81%94%E5%8A%A8/index.html)
 
-> [预览地址]()
+> [预览地址](https://visugar.github.io/FrontEnd-examples/01省市区三级联动/index.html)
