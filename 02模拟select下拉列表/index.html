@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义select图标及模拟实现select下拉列表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 700px;
+        }
+
+        fieldset {
+            width: 500px;
+            padding: 20px;
+            margin:80px 30px;
+            border: 1px solid #ccc;
+        }
+
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /*select下拉列表使用自定义图标样式部分*/
+        #userSet {
+            margin: 0 -2px -1px -2px;
+            padding-left: 5px;
+            width: 150px;
+            height: 30px;
+            border: 1px solid #000;
+            outline: none; /*去除chrome中点击之后的蓝边框*/
+            -webkit-appearance: none; /*隐藏默认样式中的小三角*/
+            -moz-appearance: none;
+            background: #fff url('http://opif0c56u.bkt.clouddn.com/select.gif') no-repeat scroll right 8px center; /*定义图片的方式设置下拉按钮*/
+            counter-reset: item; /*计数变量*/
+        }
+
+        #userSet option {
+            padding-left: 5px; /*chrome中继承select无需设置，firefox中需要设置*/
+        }
+
+        #userSet option:nth-child(2n-1) {
+            background-color: #eee;
+        }
+
+        #userSet option:before {
+            counter-increment: item;
+            content: counter(item) " . "; /*追加前置名序号,chrome中不起作用*/
+        }
+
+        /*模拟select下拉列表实现样式部分*/
+        #sel-show {
+            width: 180px;
+            height: 30px;
+            font: 14px/27px 'microsoft yahei';
+            padding-left: 10px;
+            border: 2px solid #57B5F8;
+            background: #fff url('http://opif0c56u.bkt.clouddn.com/select.gif') no-repeat scroll right 8px center;
+            box-sizing: border-box;
+            cursor: default;
+        }
+
+        #sel-wrap {
+            position: relative;
+        }
+
+        #sel-option {
+            display: none;
+            position: absolute;
+            width: 180px;
+            box-sizing: border-box;
+            border: 2px solid #A5D2D5;
+            border-top: none;
+            border-bottom: none;
+            background-color: #fff;
+        }
+
+        #sel-option li {
+            width: 178px;
+            height: 25px;
+            padding-left: 15px;
+            font: 13px/25px 'microsoft yahei';
+            list-style: none;
+            box-sizing: border-box;
+            border-bottom: 2px solid #A5D2D5;
+            cursor: default;
+        }
+
+        #sel-option li:hover {
+            color: #912B32;
+            background-color: #A5D2D5;
+            padding-left: 4px;
+            font-size: 14px;
+        }
+
+        #sel-option li:hover:before {
+            content: '\2714' ' ';
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <fieldset>
+        <legend>select下拉菜单默认样式</legend>
+        <div>
+            <select>
+                <option value="0">早上吃包子</option>
+                <option value="1">中午吃米饭</option>
+                <option value="2">晚上吃面条</option>
+                <option value="3">宵夜吃烧烤</option>
+                <option value="4">睡前喝牛奶</option>
+            </select>
+        </div>
+    </fieldset>
+</div>
+<!--*********************************************华丽丽******************************************-->
+<div>
+    <fieldset>
+        <legend>自定义select图标</legend>
+        <div>
+            <select id="userSet">
+                <option value="0">早上吃包子</option>
+                <option value="1">中午吃米饭</option>
+                <option value="2">晚上吃面条</option>
+                <option value="3">宵夜吃烧烤</option>
+                <option value="4">睡前喝牛奶</option>
+            </select>
+        </div>
+    </fieldset>
+</div>
+<!--*********************************************华丽丽******************************************-->
+<div>
+    <fieldset>
+        <legend>模拟实现select下拉列表</legend>
+        <div id="sel-wrap">
+            <div id="sel-show">=请选择=</div>
+            <ul id="sel-option">
+                <li class="item">早上吃包子</li>
+                <li class="item">中午吃米饭</li>
+                <li class="item">晚上吃面条</li>
+                <li class="item">宵夜吃烧烤</li>
+                <li class="item">睡前喝牛奶</li>
+            </ul>
+        </div>
+    </fieldset>
+</div>
+
+<script>
+    /*****************************此部分js模拟sselect下拉列表的实现***************************/
+    var selShow = document.getElementById('sel-show');
+    var selOption = document.getElementById('sel-option');
+    var bd = document.getElementsByTagName('body')[0];
+
+    var flag = false;  //用于判断是否打开下拉列表
+
+    /*点击下拉框显示选项列表*/
+    selShow.onclick = function () {
+        flag = !flag;
+        //console.log(flag);
+        if (flag == true) {
+            selOption.style.display = 'block';
+        } else {
+            selOption.style.display = 'none';
+        }
+    };
+
+    /*点击选项将内容替换到下拉框中并收起下拉选项*/
+    selOption.onclick = function (e) {
+        var ev = e || window.event;
+        var target = ev.target || ev.srcElement;
+        if (target && target.nodeName == 'LI') {
+            selShow.innerText = target.innerText;
+            selOption.style.display = 'none';
+            flag = false;
+        }
+    };
+
+    /*点击屏幕其他位置，收器下拉选项*/
+    bd.onclick = function (ev) {
+        var e = ev || event;
+        var target = e.target || e.srcElement;
+
+        if (target && target.id != 'sel-option' && target.id != 'sel-show' && target.className != 'item') {
+            selOption.style.display = 'none';
+            flag = false;
+        } else {
+            return false;
+        }
+
+        if (e && e.stopPropagation) {//阻止冒泡
+            e.stopPropagation();
+        } else {
+            window.event.cancelBubble = true;
+        }
+    };
+
+
+</script>
+</body>
+</html>
