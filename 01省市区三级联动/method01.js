@@ -58,8 +58,12 @@ function showCountry(obj) {
     var val = obj.options[obj.selectedIndex].value;
     current.city = val;
     if (val != null) {
-        country.length = 1;
+        country.length = 1; //清空之前的内容只留第一个默认选项
         var countryLen = provice[current.prov]["city"][val].districtAndCounty.length;
+        if(countryLen == 0){
+            addrShow.value = provice[current.prov].name + '-' + provice[current.prov]["city"][current.city].name;
+            return;
+        }
         for (var n = 0; n < countryLen; n++) {
             var countryOpt = document.createElement('option');
             countryOpt.innerText = provice[current.prov]["city"][val].districtAndCounty[n];

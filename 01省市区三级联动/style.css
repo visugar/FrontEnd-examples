@@ -96,7 +96,8 @@ select {
     text-align: center;
     width: 67px;
     font-size: 14px;
-    line-height: 30px;
+    line-height: 31px;
+    cursor: default;
 }
 
 .cityOn{
@@ -123,5 +124,6 @@ select {
     color: #000;
     background-color: #A5D2D5;
     border-radius: 4px;
+    cursor: pointer;
 }
 
