@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生JS实现随机生成字母数字验证码</title>
+    <style>
+        fieldset {
+            width: 400px;
+            height: 100px;
+            padding: 20px;
+        }
+
+        .validateCode {
+            height: 25px;
+            padding-left: 5px;
+            margin-right: 10px;
+        }
+
+        .code {
+            color: red;
+            font-style: italic;
+            display: inline-block;
+            height: 30px;
+            width: 65px;
+            padding: 0 5px;
+            line-height: 27px;
+            letter-spacing: 4px; /*调整字母间距*/
+            background-image: url('./img/timg.jpg');
+        }
+
+        .refresh {
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .wrong-show {
+            font-size: 12px;
+            line-height: 12px;
+            color: red;
+        }
+
+        .btn {
+            width: 70px;
+            height: 30px;
+            border-radius: 4px;
+            outline: none;
+            border: none;
+            background-color: #287599;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>原生JS实现随机生成字母数字验证码</legend>
+    <form action="#">
+        <label for="codes">
+            <input id="codes" class="validateCode">
+        </label>
+        <span class="code"></span>
+        <span class="refresh"><img src="./img/refresh.png"></span>
+        <br/>
+        <span class="wrong-show"></span>
+        <br>
+        <button class="btn" type="button">确定</button>
+    </form>
+</fieldset>
+<script>
+    var valiCode = document.getElementsByClassName('validateCode')[0];
+    var code = document.getElementsByClassName('code')[0];
+    var wrongShow = document.getElementsByClassName('wrong-show')[0];
+    var refresh = document.getElementsByClassName('refresh')[0];
+    var btn = document.getElementsByClassName('btn')[0];
+
+    var result = [];
+
+    /*声明一个数组包含所有字母及数字*/
+    var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+        'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
+        'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+
+    /*生成一个四位随机字符串*/
+    function getRandomStr() {
+        result.lenght = 0;
+        for (var i = 0; i < 4; i++) {
+            var num = Math.floor(Math.random() * 62);
+            result[i] = arr[num];
+        }
+        var codeStr = result.join('');
+        code.innerText = codeStr;
+    }
+
+    /*初始化一个验证码*/
+    window.onload = getRandomStr();
+
+    /*点击页面中该字符串重新生成一次*/
+    refresh.onclick = function () {
+        getRandomStr();
+    };
+
+    /*点击确定按钮进行验证并显示结果*/
+    btn.onclick = function () {
+        var val = valiCode.value;
+        var current = result.join('');
+        console.log(val, typeof val, current, typeof current)
+        if (current == val) {
+            /*wrongShow.innerText = '验证码输入正确!';*/
+            getRandomStr();
+            alert('验证码输入正确!');
+        } else {
+            wrongShow.innerText = '验证码输入有误!';
+            getRandomStr();
+        }
+    };
+
+</script>
+</body>
+</html>
