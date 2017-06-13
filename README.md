@@ -24,4 +24,5 @@
 + 随机生成一串长度为4的字符串，作为随机验证码，然后跟用户输入的验证码进行判断是否一致。
 
 > [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/03%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E9%AA%8C%E8%AF%81%E7%A0%81/index.html)
+
 > [预览地址](https://visugar.github.io/FrontEnd-examples/03随机生成字母数字验证码/index.html)
