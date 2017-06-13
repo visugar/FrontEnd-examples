@@ -23,6 +23,5 @@
 #### 03. 随机生成字母数字验证码
 + 随机生成一串长度为4的字符串，作为随机验证码，然后跟用户输入的验证码进行判断是否一致。
 
-> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/02%E6%A8%A1%E6%8B%9Fselect%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8/index.html)
-
-> [预览地址](https://visugar.github.io/FrontEnd-examples/02模拟select下拉列表/index.html)
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/03%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E9%AA%8C%E8%AF%81%E7%A0%81/index.html)
+> [预览地址](https://visugar.github.io/FrontEnd-examples/03随机生成字母数字验证码/index.html)
