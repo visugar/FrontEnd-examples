@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>快速排序实现</title>
+    <style>
+        #arr-ipt {
+            width: 300px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        
+        #sort-on {
+            width: 100px;
+            height: 35px;
+            border: none;
+            outline: none;
+            color: #fff;
+            line-height: 30px;
+            border-radius: 4px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="arr-ipt">请输入一个正确数组(以空格分隔)：</label>
+    <br/><br/>
+    <input id="arr-ipt" type="text" value="" placeholder="例如：25 56 35 85 43 28">
+    <button id="sort-on">排序</button>
+    <br/><br/>
+    <label>快速排序结果如下：</label>
+    <div id="arr-show"></div>
+    <script>
+
+        function $(val){
+            return document.querySelector(val);  //根据id获取元素对象
+        }  
+        
+        var arrIpt = $('#arr-ipt');  //输入框
+        var sortOn = $('#sort-on');  //排序按钮
+        var arrShow = $('#arr-show'); //排序结果显示
+        
+        var arr = [];  //存放用户输入的数据（转成后的数组）
+        
+        /*将用户输入数据转换成数组的方法*/
+        function getArr(textIpt){
+            var value = textIpt.value;
+            var temp = value.split(/\s+/g);  //以空格分割成数组
+            var array = [];
+            temp.forEach(function(num){
+                array.push(Number(num));  //字符串类型转成number类型
+            })
+            return array;
+        }
+
+        /*快速排序*/
+        function quickSort(){
+            arr = getArr(arrIpt);  //得到目标数组
+            console.log(arr);
+            sort(arr,0,arr.length-1);  //将目标数组进行排序
+
+            /*快排的具体实现*/
+            function sort(array,i,j){
+                //设置初始key值
+                if(i<j){
+                    var item = sortPart(array,i,j);  
+                    sort(arr,i,item-1); //取item之前的数组
+                    sort(arr,item+1,j); //取item之后的数组
+                }
+            }
+
+            function sortPart(array,i,j){
+                var keyValue = arr[i];  //将第一个数组元素的值当做关键数据
+                while(i<j){
+                    while(i < j && arr[j] >= keyValue){
+                        j--;  //从后往前找，如果没有找到比关键数据小的值则继续往前
+                    }
+                    arr[i] = arr[j];  //
+                    arr[j] = keyValue;  //当找到比关键数据小的值则将i和j位置的数据进行交换
+                    while(i < j && arr[i] <= keyValue){
+                        i++;  //从前往后找，如果没有遇到比关键数据大的值则继续往后找
+                    }
+                    arr[j] = arr[i];
+                    arr[i] = keyValue; //当找到比关键数据大的值则将i和j位置的数据进行交换
+                }
+
+                /*完成一轮排序*/
+                /*将所有比关键数据小的值放在关键数据的左边，比关键数据大的值放在关键数据右边*/
+
+                return i;  //将关键数据所处的位置返回出去，便于分组
+            }
+            console.log(arr);
+            arrShow.innerHTML +='排序前：'+ getArr(arrIpt) + '<br/>排序后：'+arr+'<br/><br/>';
+        }
+
+        sortOn.addEventListener('click',quickSort);
+
+        /*
+        //百度百科中给出的js实现方式
+        var arr = [56,3,87,5,89,44,8];
+        function quickSort01(array){
+            function sort(prev, numsize){
+            var nonius = prev;
+            var j = numsize -1;
+            var flag = array[prev];
+            if ((numsize - prev) > 1) {
+                while(nonius < j){
+                    for(; nonius < j; j--){
+                        if (array[j] < flag) {
+                            array[nonius++] = array[j];　//a[i] = a[j]; i += 1;
+                            break;
+                        };
+                    }
+                    for( ; nonius < j; nonius++){
+                        if (array[nonius] > flag){
+                            array[j--] = array[nonius];
+                            break;
+                        }
+                    }
+                }
+                array[nonius] = flag;
+                sort(0, nonius);
+                sort(nonius + 1, numsize);
+            }           
+        }
+        sort(0, array.length);
+        return array;
+    }
+
+    var newArr = quickSort01(arr);
+    console.log(newArr);*/
+    </script>
+</body>
+
+</html>
