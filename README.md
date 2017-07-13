@@ -26,3 +26,13 @@
 > [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/03%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E9%AA%8C%E8%AF%81%E7%A0%81/index.html)
 
 > [预览地址](https://visugar.github.io/FrontEnd-examples/03随机生成字母数字验证码/index.html)
+
+#### 04. angular4实现简易在线音乐播放
++ 挖坑中……
+
+#### 05. 快速排序的js实现
++ 根据[百度百科](http://baike.baidu.com/link?url=QJlzwEL6VTeZxD3YDkj-0oXgRewHf_sBeBif-L2wLiTsw0jdLOKjwHr9JSc3dGFfn20VAwhUnHivAAcGjIIOihk6U--M7l0ZtuNk_2IsaeCOF91fvkCELbpLB0DMpZSSc-EBw1k-xh5FiwzZNVv73iV3Ukvn74HdqABbcMRs0YN6N5KwX_Xnlf08yeNdhi-i81R40WEYjzqKFkVIpkJb3awxUDONlkM5MIVYNJR7Qnq)中快速排序算法的原理完成js的实现。
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/05%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/index.html)
+
+> [预览地址](https://visugar.github.io/FrontEnd-examples/05快速排序实现/index.html)
