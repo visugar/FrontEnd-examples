@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="懒加载 首屏加载">
+    <meta name="description" content="实现图片懒加载来提升前端性能">
+    <title>图片懒加载具体实现</title>
+    <style>
+        li {
+            list-style: none;
+        }
+        
+        img {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img src="" data-src="./imgs/06.jpg"></li>
+        <li><img src="" data-src="./imgs/07.jpg"></li>
+        <li><img src="" data-src="./imgs/08.jpg"></li>
+        <li><img src="" data-src="./imgs/09.jpg"></li>
+        <li><img src="" data-src="./imgs/10.jpg"></li>
+        <li><img src="" data-src="./imgs/11.jpg"></li>
+        <li><img src="" data-src="./imgs/12.jpg"></li>
+        <li><img src="" data-src="./imgs/13.jpg"></li>
+    </ul>
+    <script>
+        
+        /*图片懒加载*/
+        function LazyLoad(){
+            this.config = {
+                windowH:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,  //屏幕可视窗口高
+                windowW:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,   //屏幕可视窗口宽
+            },
+
+            this.init()
+        }
+
+        LazyLoad.prototype = {
+            init: function(){
+                var aImg = document.querySelectorAll('img');  //获取文档中所有的img图片
+                for(var i=0;i<aImg.length;i++){
+                    if((this.getClientRect(aImg[i]).clientT>0 && this.getClientRect(aImg[i]).clientT<this.config.windowH)||(this.getClientRect(aImg[i]).clientB>0&&this.getClientRect(aImg[i]).clientB<this.config.windowH)){
+                        aImg[i].src = aImg[i].dataset.src;  //如果图片出现在浏览器可视区域中则用img标签中自定义的data-src值去替src路径
+                    }
+                }
+            },
+
+            getClientRect: function(obj){
+                var clientT = obj.getBoundingClientRect().top;  //getBoundingClientRect方法可以获取元素到浏览器窗口边缘的距离
+                var clientR = obj.getBoundingClientRect().right;
+                var clientB = obj.getBoundingClientRect().bottom;
+                var clientL = obj.getBoundingClientRect().left;
+                return {clientT,clientR,clientB,clientL}
+            }
+        }
+
+        window.onload = window.onresize = window.onscroll = function(){
+            var lazyLoad = new LazyLoad();  //当页面加载或页面滚动或窗口大小改变时实例化一个懒加载对象
+        }
+        
+    </script>
+</body>
+
+</html>
