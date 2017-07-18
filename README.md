@@ -36,3 +36,13 @@
 > [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/05%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/index.html)
 
 > [预览地址](https://visugar.github.io/FrontEnd-examples/05快速排序实现/index.html)
+
+#### 06. 音乐可视化
++ 摸索中……
+
+#### 07. 图片懒加载
++ 注：我的图片体积较大，在线预览效果不是很好，直接预览demo打开network可以看到是出现在浏览器窗口中才加载，其中用到了一个较少人知道的`getBoundingClientRect()`方法来获取元素边缘距浏览器顶部及左部的距离。[详见MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/07lazyLoading/index.html)
+
+> [预览地址](https://visugar.github.io/FrontEnd-examples/07lazyLoading/index.html)
