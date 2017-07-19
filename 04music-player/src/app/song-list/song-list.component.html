@@ -1,0 +1,36 @@
+<div class="song-wrap">
+  <div>
+    <h5>歌曲列表</h5>
+  </div>
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item container-fluid">
+        <div class="title-wrap row">
+          <div class="col-sm-2 col-xs-2">序号</div>
+          <div class="col-sm-6 col-xs-6">标题</div>
+          <div class="col-sm-2 col-xs-2">时长</div>
+          <div class="col-sm-2 col-xs-2">歌手</div>
+        </div>
+      </li>
+      <li *ngFor="let song of songList;let item = index" class="songs list-group-item container-fluid">
+        <div class="row">
+          <div class="song-info col-sm-1 col-xs-1">
+            <span class="item">{{item + 1}}</span>
+            <!-- <i class="my-love" (click)="onLove(song)" [class.red]="isLove(song)"></i>-->
+          </div>
+          <div class="song-info col-sm-7 col-xs-7">
+            <img src="{{song.albumpic_small}}" class="song-img img-rounded">
+            <i id="play-icon" class="play-icon" (click)="onChoice(item)"></i>
+            <span>{{song.songname}}</span>
+          </div>
+          <div class="song-info col-sm-2 col-xs-2">
+            <span>{{ song.seconds | format}}</span>
+          </div>
+          <div class="song-info col-sm-2 col-xs-2">
+            <span>{{song.singername}}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

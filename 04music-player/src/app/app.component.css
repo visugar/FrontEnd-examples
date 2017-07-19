@@ -1,0 +1,63 @@
+.wrap{
+  max-width: 1000px;
+  margin: 20px auto 0;
+}
+.header{
+  margin-bottom: 20px;
+}
+#search{
+  height: 41px;
+  border: 1px solid #cccccc;
+  outline: none;
+  line-height: 30px;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+#search{
+  background: url("../assets/imgs/search.png") no-repeat left center;
+}
+@media screen and (max-width: 768px){
+   .search{
+     text-align: center;
+   }
+  #search{
+    width: 100%;
+  }
+}
+.search{
+  padding: 10px 15px;
+  font-style:normal;
+  outline: none;
+  border: 2px solid #52c7ed;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.show{
+  margin-bottom: 80px;
+}
+
+.back-to-top{
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background:url('../assets/imgs/icon_sprite.png') no-repeat 0 -120px;
+}
+.back-to-top:hover{
+  background-position: -50px -120px;
+}
+.current-song{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #3C3F41;
+}
+
+

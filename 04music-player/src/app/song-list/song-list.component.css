@@ -1,0 +1,43 @@
+*{
+  list-style: none;
+}
+.list-group li:hover{
+  background-color: #D9F5FF;
+}
+.list-group li:first-child:hover{
+  background-color: transparent;
+}
+.song-img{
+  width: 40px;
+  height: 40px;
+}
+.songs .song-info{
+  line-height: 40px;
+}
+
+#play-icon{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  vertical-align: middle;
+  background-image: url("../../assets/imgs/icon_list_menu.png");
+  background-position: 0 0;
+}
+#play-icon:hover{
+  background-position: -40px 0;
+}
+#play-icon.selected{
+  background-position: -40px -200px;
+}
+.my-love{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+  background: url('../../assets/imgs/icon_sprite.png') no-repeat -58px 0;
+}
+.my-love.red{
+  background-position: 2px -80px;
+}

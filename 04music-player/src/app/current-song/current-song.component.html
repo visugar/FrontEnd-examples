@@ -1,0 +1,32 @@
+<div class="song-play">
+  <audio class="audControl" loop='loop' src="">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="player">
+    <a href="javascript:;" (click)="prev()" id="prev" title="上一曲"><i class="iconfont icon-prev"></i></a>
+    <a href="javascript:;" id="play" (click)="playOrOff(audio)" title="播放/暂停"><i class="iconfont icon-playerplay"></i></a>
+    <a href="javascript:;" (click)="next()" id="next" title="下一曲"><i class="iconfont icon-next"></i></a>
+    <div id="time-control">
+      <div class="music-info">
+        <span></span>
+        <span> {{ songName || '歌曲'}} - {{ singerName || '歌手'}}</span>
+        <div class="time">
+          <span class="currentTime">{{(currentTime|format) || '00:00'}}</span>
+          <span class="allTime">/{{(duration|format) ||'00:00'}}</span>
+        </div>
+      </div>
+      <div id="progress" title="目前只支持点击调进度">
+        <div class="curPro"></div>
+        <i class="curProCir"></i>
+      </div>
+    </div>
+    <div id="volume">
+      <i class="volIcon"></i>
+      <div id="volume-wrap" title="目前只支持点击调音量">
+        <div class="volPro"></div>
+        <i class="volProCir"></i>
+      </div>
+    </div>
+
+  </div>
+</div>

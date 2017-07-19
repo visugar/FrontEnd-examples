@@ -1,0 +1,117 @@
+.song-play{
+  color: white;
+  min-width: 600px;
+  max-width:1000px;
+  height: 100%;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+.iconfont{
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../../assets/imgs/player.png');
+}
+.icon-prev{
+  width: 24px;
+  height: 23px;
+  margin-left: 3%;
+  background-position: 0 -29px;
+}
+.icon-playerplay{
+  width: 25px;
+  height: 30px;
+  margin: 0 5%;
+  background-position: 0 0;
+}
+.icon-next{
+  width: 24px;
+  height: 24px;
+  background-position: 0 -50px
+}
+#time-control,#volume{
+  display: inline-block;
+  vertical-align: middle;
+}
+#time-control{
+  position: relative;
+  width: 50%;
+  margin-left: 30px;
+}
+.music-info{
+  height: 30px;
+}
+.time{
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+}
+
+#progress{
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background-color: #888;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.curPro{
+  width: 0;
+  height: 6px;
+  border-radius: 3px 0 0 3px/3px 0 0 3px;
+  background-color: #eee;
+}
+.curProCir{
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  margin-left: -5px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+#volume{
+  width: 20%;
+}
+.volIcon{
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  margin: 10px 0 0 30px;
+  background: url(../../assets/imgs/player.png) no-repeat 0 -142px;
+}
+
+#volume-wrap{
+  position: relative;
+  display: inline-block;
+ width:60%;
+ height: 6px;
+ border-radius: 3px;
+ margin:0 0 10px 0;
+ background-color: #888;
+ cursor: pointer;
+}
+
+.volPro{
+  width: 0;
+  height: 6px;
+  border-radius: 3px 0 0 3px/3px 0 0 3px;
+  background-color: #eee;
+}
+
+.volProCir{
+  position: absolute;
+  top: -3px;
+  left: 0;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  margin-left: -5px;
+  background-color: #eee;
+  cursor: pointer;
+}

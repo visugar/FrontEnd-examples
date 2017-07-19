@@ -1,0 +1,24 @@
+<div class="wrap">
+  <div class="header">
+    <ul class="catelog nav nav-tabs nav-justified" >
+      <li role="presentation" (click)="onSelect('hot')" [class.active]="isSelected('hot')"><a [routerLink]="['/catelog', 'hot']" href="#">热门</a></li>
+      <li role="presentation" (click)="onSelect('play')" [class.active]="isSelected('play')"><a routerLink="/play" routerLinkActive="active"  href="#">当前音乐</a></li>
+      <!--<li role="presentation" (click)="onSelect('history')" [class.active]="isSelected('history')"><a [routerLink]="['/catelog', 'history']" href="#">历史播放</a></li>
+      <li role="presentation" (click)="onSelect('love')" [class.active]="isSelected('love')"><a [routerLink]="['/catelog', 'love']" href="#">我喜欢的</a></li>-->
+      <li role="presentation" (click)="onSelect('search')" [class.active]="isSelected('search')"><input id="search" type="text" value="" #keyword placeholder="搜索">
+      <i class="search" href="#" (click)="onsearch(keyword.value)">确定</i></li>
+    </ul>
+  </div>
+  <div class="show">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div>
+  <a class="back-to-top" href="javascript:;" (click)="backToTop()"></a>
+</div>
+<div class="current-song">
+  <app-current-song></app-current-song>
+</div>
+
+
+
