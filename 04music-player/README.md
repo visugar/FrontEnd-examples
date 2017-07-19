@@ -1,3 +1,18 @@
+#### 声明
+
+基本功能可以实现，但是存在较多不足，后续完善
+
+#### 使用
+
++ 下载源代码
++ `cd 04music-player`
++ `npm install `
++ `ng serve`
++ 进入浏览器访问 `http://localhost:4200`
+
+#### 效果如下
+
+
 # MusicPlayer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
