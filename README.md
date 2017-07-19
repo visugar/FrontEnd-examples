@@ -1,6 +1,6 @@
 ## FrontEnd-examples
 
-### 随便写写的小栗子
+# 随便写写的小栗子
 
 #### 01.省市区三级联动的三种实现的方式（原生js实现）
 + 方式一：使用select的onchange事件及selectedIndex属性来完成，其中省市区（县）数据是在网上找的，不能保证真实性
@@ -28,7 +28,11 @@
 > [预览地址](https://visugar.github.io/FrontEnd-examples/03随机生成字母数字验证码/index.html)
 
 #### 04. angular4实现简易在线音乐播放
-+ 挖坑中……
++ 采用简易的观察者模式实现简易在线音乐播放
++ 使用angular-cli创建的项目结构
++ 数据来源：[易源数据](https://www.showapi.com/api/lookPoint/213/1)
+
+> [源码地址及使用方式](https://github.com/visugar/FrontEnd-examples/tree/master/04music-player)
 
 #### 05. 快速排序的js实现
 + 根据[百度百科](http://baike.baidu.com/link?url=QJlzwEL6VTeZxD3YDkj-0oXgRewHf_sBeBif-L2wLiTsw0jdLOKjwHr9JSc3dGFfn20VAwhUnHivAAcGjIIOihk6U--M7l0ZtuNk_2IsaeCOF91fvkCELbpLB0DMpZSSc-EBw1k-xh5FiwzZNVv73iV3Ukvn74HdqABbcMRs0YN6N5KwX_Xnlf08yeNdhi-i81R40WEYjzqKFkVIpkJb3awxUDONlkM5MIVYNJR7Qnq)中快速排序算法的原理完成js的实现。
