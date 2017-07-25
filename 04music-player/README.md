@@ -12,6 +12,10 @@
 
 #### 效果如下
 
+![主界面](http://opif0c56u.bkt.clouddn.com/20170720music01.png?imageView/2/w/600/90)
+![播放状态](http://opif0c56u.bkt.clouddn.com/20170720music02.png?imageView/2/w/600/90)
+![当前播放](http://opif0c56u.bkt.clouddn.com/20170720music03.png?imageView/2/w/600/90)
+![搜索结果](http://opif0c56u.bkt.clouddn.com/20170720music04.png?imageView/2/w/600/90)
 
 # MusicPlayer
 

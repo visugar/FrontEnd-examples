@@ -50,3 +50,14 @@
 > [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/07lazyLoading/index.html)
 
 > [预览地址](https://visugar.github.io/FrontEnd-examples/07lazyLoading/index.html)
+
+#### 08. HTML5拖放API小栗子
++ 使用html5中的拖放API实现网页中元素拖拽及本地资源显示在网页中等小栗子，具体原理请移步至[详解](http://www.jianshu.com/p/b7762be74511)
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/08H5%E6%8B%96%E6%94%BEAPI/index.html)
+
+> [预览地址1](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/index.html)
+
+> [预览地址2](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/drag01.html)
+
+> [预览地址3](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/drag02.html)
