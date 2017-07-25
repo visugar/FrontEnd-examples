@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>节点拖拽</title>
+    <style>
+        ul {
+            border: 2px dashed #ccc;
+            width: 360px;
+            overflow:auto;
+        }
+        
+        li {
+            float:left;
+            width: 40px;
+            height: 40px;
+            background-color: #54b1eb;
+            text-align: center;
+            list-style:none;
+            margin: 20px;
+            line-height: 40px;
+        }
+
+        .draging{
+            background:#137574;
+            opacity:0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="drag">
+        <li draggable="true">A</li>
+        <li draggable="true">B</li>
+        <li draggable="true">C</li>
+        <li draggable="true">D</li>
+        <li draggable="true">E</li>
+        <li draggable="true">F</li>
+        <li draggable="true">G</li>
+        <li draggable="true">H</li>
+    </ul>
+
+    <script>
+    /*
+    *源对象事件：ondragstart/ondrag/ondragend
+    *目标对象事件：ondragenter/ondragover/ondragleave/ondrop
+    */
+    var drag = document.querySelector('#drag');
+    var ele
+    /*源对象上的dragstart事件*/
+    drag.addEventListener('dragstart', function (e) {
+        ele = e.target;
+        ele.classList.add('draging');
+    })
+
+    /*目标对象上触发的dragove事件*/
+    drag.addEventListener('dragover', function (e) {
+        e.preventDefault(); //阻止默认动作
+    })
+  
+    /*源对象释放，目标对象上触发的事件*/
+    drag.addEventListener('drop', function (e) {
+        ele.classList.remove('draging');
+        if (e.target.nodeName === 'LI') {
+            e.target.parentNode.insertBefore(ele, e.target); //将源对象元素插入到目标元素前面
+        }
+    })
+</script>
+</body>
+
+</html>

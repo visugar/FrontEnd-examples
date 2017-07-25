@@ -1,0 +1,54 @@
+    <!DOCTYPE html>  
+    <html>  
+    <head lang="en">  
+      <meta charset="UTF-8">  
+      <title>把龙猫丢进垃圾桶啊啊啊啊</title>  
+      <style>  
+        body {  
+          text-align: center;  
+        }  
+        #bin {   
+          margin: 15px;  
+        }
+
+        .imgs{
+            width:200px;
+            height:220px;
+        }
+      </style>  
+    </head>  
+    <body>  
+      <h3>拖动龙猫到垃圾桶后从DOM树中删除子元素</h3>  
+      <img id="bin" src="./img/default.png">  
+      <hr/>  
+      <img id="item1" class="imgs" src="./img/01.jpeg">  
+      <img id="item2" class="imgs" src="./img/02.jpg">  
+      <img id="item3" class="imgs" src="./img/03.jpeg">  
+      
+      <script>  
+      
+        //为源对象添加事件监听 —— 记录拖动了哪一个源对象  
+        var imgs = document.querySelectorAll('.imgs'); 
+        var target = document.querySelector('#bin');
+
+        for(var i=0; i<imgs.length; i++){   
+          var pic = imgs[i];  
+          pic.ondragstart = function(e){ //开始拖动源对象  
+            e.dataTransfer.setData('imgID',this.id);//保存被拖拽源的id 
+          }    
+        }  
+      
+        //为目标对象添加事件监听 —— 删除拖动的源对象   
+        target.ondragover= function(e){    
+          e.preventDefault();  //阻止默认行为  
+        }  
+        target.ondrop= function(e){ //源对象松手释放在了目标对象中   
+          //删除被拖动的源对象  
+          var id = e.dataTransfer.getData('imgID');  
+          var p = document.getElementById(id);   
+          p.parentNode.removeChild(p);  //从父元素中删除子节点  
+        }  
+      
+      </script>  
+    </body>  
+    </html>  

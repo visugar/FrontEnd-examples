@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>把本地照片放到网页中</title>
+    <style>
+        #content{
+            width:500px;
+            height:600px;
+            border:1px solid #ccc;
+            overflow:auto;
+        }
+        img{
+            width:250px;
+        }
+    </style>
+</head>
+<body>
+    <h3>来吧，拖你的美照进来吧！</h3>
+    <div id="content"></div>
+<script>
+    var content = document.querySelector('#content');
+
+    document.addEventListener('dragover',function(e){
+        e.preventDefault(); //阻止document的默认事件
+    });
+
+    document.addEventListener('drop',function(e){
+        e.preventDefault(); //阻止document的默认事件(阻止照片在新窗口中打开)
+    });
+
+    content.addEventListener('dragover',function(e){
+        e.preventDefault();
+    })
+
+    content.addEventListener('drop',function(e){
+        var imgFs = e.dataTransfer.files[0];  //files存放了文件列表
+        //console.log(imgFs);
+        var fs = new FileReader();  //创建一个FileReader对象
+        fs.readAsDataURL(imgFs);
+        /*图片资源加载完成之后显示在content中*/
+        fs.onload = function(){
+            var img = new Image();
+            img.src = fs.result;
+            content.appendChild(img);
+        }
+    })
+</script>
+</body>
+</html>
