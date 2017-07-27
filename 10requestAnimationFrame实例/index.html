@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>requestAnimationFrame实例</title>
+    <style>
+        .item {
+            width: 100px;
+            height: 100px;
+            border-radius: 4px;
+            background: #007ACC;
+            text-align: center;
+            line-height: 100px;
+            color: #FFF;
+            margin: 20px 50px 80px;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>匀速旋转</h3>
+    <div class="item item1">点我啊</div>
+    <h3>不规则变化</h3>
+    <div class="item item2">点我啊</div>
+    <h3>在2秒内向右移动200px</h3>
+    <div class="item item3">点我丫</div>
+
+    <script>
+        var item = document.querySelectorAll('.item');
+        var deg = 0 , x = 0, y = 0;
+        var self = [];
+
+        function rotate(){
+           /* var i=0;
+            while(i<100000000){
+                i++;  //模拟耗时
+            }*/
+            self[0].style.transform = "rotate("+ (deg++) +"deg)";
+            requestAnimationFrame(rotate);
+        }
+
+        /*匀速旋转*/
+        item[0].addEventListener('click',function(){
+             self[0] = this;
+            requestAnimationFrame(rotate);  //类似于定时器的功能
+        },false);
+
+        function translate(){
+            self[1].style.transform = "translate("+ (x++) + "px," + 100*Math.cos(Math.PI *(y++/180)) + "px)";
+            requestAnimationFrame(translate);
+        }
+
+        /*匀速移动*/
+        item[1].addEventListener('click',function(){
+            self[1] = this;
+            requestAnimationFrame(translate);
+        });
+
+        /*把动画控制在一定时间内*/
+        item[2].addEventListener('click',function(){
+            self[2] = this;
+            var startTime = Date.now(),
+            distance = 200,
+            duration = 2000;
+            requestAnimationFrame(function change(){
+                var p = Math.min(1.0,(Date.now() - startTime)/duration);
+                self[2].style.transform = 'translateX('+ (distance*p) +'px)';
+                if(p<1.0){
+                    requestAnimationFrame(change);
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

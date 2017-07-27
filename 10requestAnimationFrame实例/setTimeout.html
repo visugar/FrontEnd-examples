@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>setTimeout实例</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        var startTime = new Date();
+        var i = 0;
+        function User(login){
+            this.login = login;
+            this.sayHi = function(){
+                console.log(this.login);
+            }
+        }
+
+        var user = new User('john');
+        setTimeout(user.sayHi, 1000);
+        setTimeout(function () { console.log(new Date() - startTime); }, 1000)
+        console.log('开始循环！');
+        while(i<1000){
+            i++;
+        }
+        console.log('循环结束!');
+
+        var name = 'lily';
+        function Person(name){
+            this.name = name;
+            this.printName = function(){
+                console.log(this.name);
+            }
+        }
+
+        var person01 = new Person('jike');
+        window.setTimeout(person01.printName,1000);  //此处的this.name为window下的name，所以是'lily'
+        window.setTimeout(person01.printName.bind(person01),2000);  //此处将printName绑定在person01上，所以this.name的值为'jike'
+        window.setTimeout(function(){person01.printName();},3000); //将printName中的this.name与person01限定在同一个作用域中，所以结果是'jike'
+        
+
+        function add(a,b){
+            console.log(a+b);
+        }
+        setTimeout(add,4000,20,30);  //20和30作为add的参数传入
+        
+
+        setTimeout(function(){
+            console.log('hello!');
+        },0)
+    </script>
+</body>
+
+</html>
