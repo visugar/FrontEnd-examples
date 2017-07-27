@@ -60,4 +60,14 @@
 
 > [预览地址2](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/drag01.html)
 
-> [预览地址3](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/drag02.html)
+> [预览地址3](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/drag02.html) 
+
+#### 09. 在线网页便筏
++  酝酿中额~
+
+#### 10. requestAnimationFrame小栗子
++ 使用requestAnimationFrame实现简单动画，要了解更多请移步[关于动画，你需要知道的](https://www.w3cplus.com/animaton/animations-you-should-know.html)
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/10requestAnimationFrame%E5%AE%9E%E4%BE%8B/index.html)
+
+> [预览地址](https://visugar.github.io/FrontEnd-examples/10requestAnimationFrame%E5%AE%9E%E4%BE%8B/index.html)
