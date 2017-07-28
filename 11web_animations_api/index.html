@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAPPI实例</title>
+    <style>
+        .item{
+            width:100px;
+            height:100px;
+            border:4px;
+            background-color:#FFAEC9;
+            margin:20px 0 0 20px;
+            text-align:center;
+            line-height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="item item0">点我额</div>
+    <div class="item item1">点我变小</div>
+    <div class="item item2">点我变大</div>
+<script>
+
+    var items = document.querySelectorAll(".item");
+
+    var ani00 = [
+        {transform:'rotate(0)',backgroundColor:'#FFAEC9'},
+        {backgroundColor:'#ED1C24',offset:0.7},
+        {transform:'rotate(360deg)',backgroundColor:'#FFAEC9'}
+    ];
+    var aniOpt00 = {
+        duration:3000,
+        iterations:Infinity
+    };
+    
+    /*方块一的动画*/
+    var items00 = items[0].animate(ani00,aniOpt00);    //调用后立即执行 
+    items[0].addEventListener('click',function(){
+        if(items00.playState == 'running'){
+            items00.playbackRate = -1;
+        }else{
+            items00.playbackRate = 1;
+        }
+    });
+
+    /*方块二的动画*/
+    var ani01 = [
+        {transform:'scale(0.5)',borderRadius:'4px',backgroundColor:'#FFAEC9'},
+        {borderRadius:'50%',backgroundColor:'#59C6B3'},
+        {transform:'scale(1.3)',borderRadius:'4px',backgroundColor:'#FFAEC9'}
+    ];
+    var aniOpt01 = {
+        duration:2000,
+        iterations:1,
+        fill: 'both',
+        //easing:linear
+
+    }
+    function rotate(){
+       this.animate(ani01,aniOpt01);
+    }
+    items[1].addEventListener('click',rotate);
+    
+</script>
+</body>
+</html>

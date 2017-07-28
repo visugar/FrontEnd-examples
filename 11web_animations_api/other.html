@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WAPPI实例</title>
+    <style>
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 4px;
+            background-color: red;
+            margin: 20px 0 0 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        .item1 {
+            /*animation: rotate 4s infinite ease running;*/
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform:rotate(0);
+                background-color:red;
+            }
+            40% {
+                background-color:blue;
+            }
+            100% {
+                transform: rotate(360deg);
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item item1">点我额</div>
+    <script>
+
+    var item1 = document.querySelector(".item1");
+
+    var ani1 = [
+        {transform:'rotate(0)',backgroundColor:'red'},
+        {backgroundColor:'blue',offset:0.4},
+        {transform:'rotate(360deg)',backgroundColor:'red'}
+    ];
+    var aniOpt1 = {
+        duration:4000,
+        //iterations:Infinity,
+        iterations:3,
+        easing:'ease-in-out'
+    };
+
+    var rotateAni = item1.animate(ani1,aniOpt1);
+    rotateAni.currentTime = 3000;
+    setTimeout(function(){
+        console.log(rotateAni.currentTime);
+       // rotateAni.pause(); //在6秒后让动画暂停
+       //rotateAni.reverse(); //在6秒后方向执行
+        rotateAni.finish(); //(对有限次的动画)停止动画且直接跳到结束位置
+         //rotateAni.cancel(); // 取消动画过程，直接跳到动画的开始位置 
+        //rotateAni.playbackRate = 1.5;   //沿着原来的方向，使动画执行的更慢
+         console.log(rotateAni.currentTime);
+    },6000);
+    
+    rotateAni.onfinish = function(){
+        console.log('我已完成动画了');
+    }
+    rotateAni.oncancel = function(){
+        console.log('我已取消动画额');
+    }
+    
+</script>
+</body>
+
+</html>
