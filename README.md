@@ -71,3 +71,10 @@
 > [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/10requestAnimationFrame%E5%AE%9E%E4%BE%8B/index.html)
 
 > [预览地址](https://visugar.github.io/FrontEnd-examples/10requestAnimationFrame%E5%AE%9E%E4%BE%8B/index.html)
+
+#### 11. Web Animations API (JS动画利器)
++ 使用wappi的基本属性及方法，实现与css3动画同样的效果，其中waapi中有更丰富的方法来控制动画过程，但浏览器的支持度不高，玩玩小栗子还是可以的额
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/tree/master/11web_animations_api)
+
+> [预览地址](https://visugar.github.io/visugar/FrontEnd-examples/11web_animations_api/index.html)
