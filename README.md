@@ -76,3 +76,10 @@
 + 使用wappi的基本属性及方法，实现与css3动画同样的效果，其中waapi中有更丰富的方法来控制动画过程，但浏览器的支持度不高，玩玩小栗子还是可以的额
 
 > [源码地址](https://github.com/visugar/FrontEnd-examples/tree/master/11web_animations_api)
+
+#### 12. 自定义滚动条样式
++ 使用scrollbar的一些伪类实现自定义滚动条的样式，但兼容性是不存在的，所以就当随便耍耍~
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/12%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/index.html)
+
+> [预览地址](http://visugar.com/FrontEnd-examples/12%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/index.html)（chrome下有效）
