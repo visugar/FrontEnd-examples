@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义滚动条样式</title>
+    <style>
+        .text-clip {
+            width: 220px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+        .parent {
+            overflow: auto;
+        }
+        
+        .box {
+            float: left;
+            width: 150px;
+            height: 250px;
+            margin: 0 40px 40px 0;
+            border: 1px solid #eee;
+        }
+        
+        .box1 {
+            overflow: visible;
+        }
+        
+        .box2 {
+            overflow: hidden;
+        }
+        
+        .box3 {
+            overflow: scroll;
+        }
+        
+        .box4 {
+            overflow: auto;
+        }
+        
+        .box5 {
+            overflow: inherit;
+        }
+        
+        .box6,
+        .box7,
+        .box8,
+        .box9,
+        .box10 {
+            overflow-y: scroll;
+        }
+        
+        .box6::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        .box6::-webkit-scrollbar-track {
+            border-radius: 5px;
+            background-color: #eee;
+        }
+        
+        .box6::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background: #3DB6A4;
+        }
+        
+        .box7::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .box7::-webkit-scrollbar-track {
+            background-color: #eee;
+        }
+        
+        .box7::-webkit-scrollbar-thumb {
+            background: #3DB6A4;
+        }
+        
+        .box8::-webkit-scrollbar {
+            width: 12px;
+            background-color: #eee;
+        }
+        
+        .box8::-webkit-scrollbar-track {
+            background-color: #eee;
+        }
+        
+        .box8::-webkit-scrollbar-thumb {
+            background: #3DB6A4;
+        }
+        
+        .box8::-webkit-scrollbar-button:start {
+            background: url(./imgs/up.png) no-repeat;
+            background-size: 12px 12px;
+        }
+        
+        .box8::-webkit-scrollbar-button:end {
+            background: url(./imgs/down.png) no-repeat;
+            background-size: 12px 12px;
+        }
+        
+        .box9 {
+            overflow: scroll;
+        }
+        /*width为垂直滚动条的宽度，height为水平滚动条的高度*/
+        
+        .box9::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+        
+        .box9::-webkit-scrollbar-track {
+            background-color: #eee;
+        }
+        
+        .box9::-webkit-scrollbar-thumb {
+            background: #3DB6A4;
+        }
+        /*自定义交汇处*/
+        
+        .box9::-webkit-scrollbar-corner {
+            background: url(./imgs/jiaocha.png) no-repeat;
+            background-size: 12px 12px;
+        }
+        
+        .box10::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        .box10::-webkit-scrollbar-track {
+            background-color: #eee;
+        }
+        
+        .box10::-webkit-scrollbar-thumb {
+            background: #3DB6A4;
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+        }
+        .box10::-webkit-scrollbar-track-piece{
+            background-color:#eee;
+        }
+        .box10::-webkit-scrollbar-button:start {
+            background: url(./imgs/up.png) no-repeat;
+            background-size: 12px 12px;
+        }
+        
+        .box10::-webkit-scrollbar-button:end {
+            background: url(./imgs/down.png) no-repeat;
+            background-size: 12px 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="text-clip">下面是overflow属性值巴拉巴拉巴拉巴拉啦啦啦啦</h3>
+    <div class="parent">
+        <div class="box box1">
+            <h4>overflow:visible,我是box1</h4>
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box2">
+            <h4>overflow:hidden,我是box2</h4>
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box3">
+            <h4>overflow:scroll,我是box3</h4>
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box4">
+            <h4>overflow:auto,我是box4</h4>
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box5">
+            <h4>overflow:inherit,我是box5</h4>
+            <p>此处父元素设置的是auto。这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+    </div>
+    <h3 class="text-clip">下面是自定义滚动条样式巴拉巴拉巴拉巴拉啦啦啦啦</h3>
+    <div class="scroll-wrap">
+        <div class="box box6">
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。 这个属性定义溢出元素内容区的内容会如何处理。如果值为
+                scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box7">
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。 这个属性定义溢出元素内容区的内容会如何处理。如果值为
+                scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box8">
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。 这个属性定义溢出元素内容区的内容会如何处理。如果值为
+                scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box9">
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。 这个属性定义溢出元素内容区的内容会如何处理。如果值为
+                scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+        <div class="box box10">
+            <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。 这个属性定义溢出元素内容区的内容会如何处理。如果值为
+                scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
