@@ -69,9 +69,10 @@
 > [预览地址3](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/drag02.html) 
 
 #### 09. 简易在线网页便筏
-+  使用本地存储实现简易的在线网页便筏
++  使用本地存储实现简易的在线网页便筏，基本功能已实现，还有点小问题。。。
 
 > [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/09%E7%BD%91%E9%A1%B5%E7%89%88%E4%BE%BF%E7%AD%8F%E7%B3%BB%E7%BB%9F/index.html)
+
 > [预览地址](https://visugar.github.io/FrontEnd-examples/09%E7%BD%91%E9%A1%B5%E7%89%88%E4%BE%BF%E7%AD%8F%E7%B3%BB%E7%BB%9F/index.html)
 
 #### 10. requestAnimationFrame小栗子
