@@ -2,6 +2,12 @@
 
 # 随便写写的小栗子
 
+
+#### 00.Html,css,js的基本结构与公共方法
++ Html：最基础的文件结构参考
++ css：样式的基础设置
++ js：常用的公共js方法
+
 #### 01.省市区三级联动的三种实现的方式（原生js实现）
 + 方式一：使用select的onchange事件及selectedIndex属性来完成，其中省市区（县）数据是在网上找的，不能保证真实性
 + 方式二：按级选中省市区
@@ -62,8 +68,11 @@
 
 > [预览地址3](https://visugar.github.io/FrontEnd-examples/08H5%E6%8B%96%E6%94%BEAPI/drag02.html) 
 
-#### 09. 在线网页便筏
-+  酝酿中额~
+#### 09. 简易在线网页便筏
++  使用本地存储实现简易的在线网页便筏
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/09%E7%BD%91%E9%A1%B5%E7%89%88%E4%BE%BF%E7%AD%8F%E7%B3%BB%E7%BB%9F/index.html)
+> [预览地址](https://visugar.github.io/FrontEnd-examples/09%E7%BD%91%E9%A1%B5%E7%89%88%E4%BE%BF%E7%AD%8F%E7%B3%BB%E7%BB%9F/index.html)
 
 #### 10. requestAnimationFrame小栗子
 + 使用requestAnimationFrame实现简单动画，要了解更多请移步[关于动画，你需要知道的](https://www.w3cplus.com/animaton/animations-you-should-know.html)
