@@ -1,0 +1,51 @@
+/* reset */
+html, body, h1, h2, h3, h4, h5, h6, div, ul, li, p, form, label, input, button, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+table, th, td, thead, tbody {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+}
+
+button {
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+body, input, button {
+  font: 12px/1.14 'Microsoft YaHei';
+  outline: 0;
+  color: #000;
+}
+
+.clearfix:before,.clearfix:after{
+  content:'·';
+  height: 0;
+  display: block;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.clearfix{
+  zoom:1;
+}
