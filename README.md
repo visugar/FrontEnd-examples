@@ -39,8 +39,8 @@
 + 数据来源：[易源数据](https://www.showapi.com/api/lookPoint/213/1)
 
 > [源码地址及使用方式](https://github.com/visugar/FrontEnd-examples/tree/master/04music-player/dist)
-(访问速度比较慢~)
-> [预览地址](https://visugar.github.io/FrontEnd-examples/04music-player/)
+
+> (访问速度比较慢~)[预览地址](https://visugar.github.io/FrontEnd-examples/04music-player/)
 
 
 ### 05. 快速排序的js实现
