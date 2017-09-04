@@ -40,7 +40,7 @@
 
 > [源码地址及使用方式](https://github.com/visugar/FrontEnd-examples/tree/master/04music-player/dist)
 
-> (访问速度比较慢~)[预览地址](http://visugar.com/angular/01musicPlayer/dist)
+> (访问速度比较慢~)[预览地址](http://visugar.com/angular/01musicPlayer/dist/)
 
 
 ### 05. 快速排序的js实现
