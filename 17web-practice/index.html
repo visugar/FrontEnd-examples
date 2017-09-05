@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="云课堂，编程课程，设计课程">
+    <meta name="description" content="网易前端微专业大作业实战">
+    <title>网易前端微专业</title>
+    <link rel="shortcut icon" href="http://opeywooaz.bkt.clouddn.com/icon1.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body onbeforeunload="checkCookie()">
+    <div id="container">
+        <!--登录弹窗-->
+        <div class="login-mask">
+            <div class="login-pop">
+                <div class="login-title">
+                    <h4>登录</h4>
+                    <span class="login-close">×</span>
+                </div>
+                <label for="user">用户名</label>
+                <input type="text" name="user" id="user" class="user"><br/>
+                <label id="psw">密码</label>
+                <input type="password" name="psw" id="psw" class="psw"><br/>
+                <button type="button" class="login-btn">登录</button>
+                <button type="button" class="login-cal">取消</button>
+            </div>
+        </div>
+        <!-- 顶部可去除栏 -->
+        <div class="extra-head">
+            <div class="extra">
+                <p>网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！
+                    <a class="more" href="#">&nbsp;&nbsp;立即查看&gt;</a>
+                    <a class="close" href="#">×&nbsp;不再提醒</a>
+                </p>
+            </div>
+        </div>
+        <!-- 头部 -->
+        <div class="header">
+            <div class="navbar clearfix">
+                <div class="navL">
+                    <div class="logo"><span class="logo-n">EDU</span>网易教育产品部</div>
+                    <div class="login">
+                        <button class="attention follow">+&nbsp;关注</button>
+                        <button class="attention userFoll">&nbsp;已关注&nbsp;|&nbsp;<span class="unfollow">取消</span></button>
+                        <div class="fans">粉丝&nbsp;<span class="attention_num">45</span></div>
+                    </div>
+                </div>
+                <div class="navR">
+                    <ul>
+                        <li><a href="http://open.163.com/">网易公开课</a></li>
+                        <li><a href="http://study.163.com/">云课堂</a></li>
+                        <li><a href="http://www.icourse163.org/">中国大学MOOC</a></li>
+                        <li class="search"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 轮播图 -->
+        <div class="slide">
+            <ul class="pic-list">
+                <li class="show-on">
+                    <a href="http://open.163.com/"><img src="./imgs/banner1.jpg" class="img img1"></a>
+                </li>
+                <li >
+                    <a href="http://study.163.com/"><img src="./imgs/banner2.jpg" class="img img2"></a>
+                </li>
+                <li>
+                    <a href="http://www.icourse163.org/"><img src="./imgs/banner3.jpg" class="img img3"></a>
+                </li>
+            </ul>
+            <ul class="icon-list">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- 中间主要内容 -->
+        <div id="main">
+            <div class="lesson-wrap">
+                <div class="lesson-list ">
+                    <div class="lesson clearfix list1">
+                        <img src="./imgs/open.png" alt="网易公开课图标">
+                        <div class="details">
+                            <h3>网易公开课</h3>
+                            <p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度创新，网易视频公开课频道搭建起强有力的网络视频教学平台。</p>
+                            <span><a href="http://open.163.com/" class="more">了解更多&nbsp;></a></span>
+                        </div>
+                    </div>
+                    <div class="lesson clearfix list2">
+                        <img src="./imgs/study.png" alt="云课堂图标">
+                        <div class="details">
+                            <h3>云课堂</h3>
+                            <p>网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程创新的个性化学习体验，自由开发的交流互动环境。</p>
+                            <span><a href="http://study.163.com/" class="more">了解更多&nbsp;></a></span>
+                        </div>
+                    </div>
+                    <div class="lesson clearfix list3">
+                        <img src="./imgs/icourse.png" alt="中国大学MOOC图标">
+                        <div class="details">
+                            <h3>中国大学MOOC</h3>
+                            <p>是爱课程网携手云课堂打造的在线学习平台，每一个有提升职业愿望的人都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p>
+                            <span><a href="http://www.icourse163.org/" class="more">了解更多&nbsp;></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 图片浏览 -->
+            <div class="img-skim clearfix">
+                <img src="./imgs/picture1.jpg">
+                <img src="./imgs/picture2.jpg">
+                <img src="./imgs/picture3.jpg">
+                <img src="./imgs/picture4.jpg">
+                <img src="./imgs/picture5.jpg">
+            </div>
+            <!-- 课程 -->
+            <div class="course">
+                <div class="course-wrap clearfix">
+                    <div class="ls allcourse">
+                        <div class="category">
+                            <button class="btn category1 active">产品设计</button>
+                            <button class="btn category2">编程语言</button>
+                        </div>
+                        <div class="cus">
+                            <ul class="cusList clearfix"></ul>
+                        </div>
+                        <div class="page clearfix">
+                            <button class="btn next">&gt;</button>
+                            <ul class="page-list"></ul>
+                            <button class="btn prev">&lt;</button>
+                        </div>
+                    </div>
+                    <div class="ls hot">
+                        <div class="hot-title">机构介绍</div>
+                        <div class="hot-indu">
+                            <span>观看下面的视频来了解吧</span>
+                            <img class="video-play" src="./imgs/video.jpg" alt="点击播放">
+                        </div>
+                        <div class="video-mask">
+                            <div class="video-pop">
+                                <span class="video-close">×</span>
+                                <video class="video" controls src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4"></video>
+                            </div>
+                        </div>
+                        <div class="hot-title">最热排行</div>
+                        <div class="hot-ls">
+                            <ul class="hot-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="footer-wrap clearfix">
+                <div class="ft info">
+                    <span class="logo"><span class="logo-n">EDU</span>网易教育产品部</span>
+                    <p>&copy;2014 icourse163.org 浙ICP备08114786号-1</p>
+                    <p>icourses.cn 京ICP备12020869号-2 京公网备110102000459-2</p>
+                </div>
+                <div class="ft link">
+                    <h4>
+                        <span>友情链接：</span><br/>
+                        <a href="http://open.163.com/">网易公开课</a><br/>
+                        <a href="http://study.163.com/">网易云课堂</a><br/>
+                        <a href="http://www.icourse163.org/">中国大学MOOC</a>
+                    </h4>
+                </div>
+                <div class="ft contact">
+                    <h4>
+                        <span>我们：</span><br/>
+                        <a href="">关于</a><br/>
+                        <a href="">联系</a><br/>
+                        <a class="blog" href="">关注 </a>
+                    </h4>
+                </div>
+                <div class="ft more">
+                    <h4>
+                        <span>更多：</span><br/>
+                        <a href="">常见问题</a><br/>
+                        <a href="">常见反馈</a><br/>
+                    </h4>
+                </div>
+                <div>
+                </div>
+            </div>
+            <script src="./js/md5.min.js"></script>
+            <script src="./js/practice.js"></script>
+</body>
+
+</html>

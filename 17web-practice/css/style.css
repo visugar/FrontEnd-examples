@@ -1,0 +1,747 @@
+/* reset */
+html, body, h1, h2, h3, h4, h5, h6, div, ul, li, p, form, label, input, button, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+table, th, td, thead, tbody {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+}
+
+button {
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+body, input, button {
+  font: 12px/1.14 'Microsoft YaHei';
+  outline: 0;
+  color: #000;
+}
+
+.clearfix:before,.clearfix:after{
+  content:'·';
+  height: 0;
+  display: block;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.clearfix{
+  zoom:1;
+}
+
+/*媒体查询部分*/
+@media screen and (min-width: 1205px) {
+    .extra-head,.slide,.lesson-wrap, .img-skim,.course, .footer{
+      width:100%;
+    }
+    .extra-head .extra, .navbar,.lesson-list,.course-wrap{
+      width: 1205px;
+    }
+
+    .course-wrap .allcourse{
+    width: 980px;
+  }
+}
+
+@media screen and (max-width:1204px){
+  .extra-head,.slide,.header,.lesson-wrap, .img-skim, .course,.footer{
+    width:1204px;
+  }
+
+  .extra-head .extra, .navbar,.lesson-list,.course-wrap{
+    width: 960px;
+  }
+  .course-wrap .allcourse{
+    width: 735px;
+  }
+}
+
+/*顶部可去除栏*/
+.extra-head{
+    height: 35px;
+    margin: 0 auto;
+    background:#F3F3F3;
+}
+
+.extra-head .extra{
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+.extra-head .extra p{
+  line-height: 35px;
+}
+
+.more{
+  color:#39a030;
+}
+
+.extra-head .close{
+  position: absolute;
+  right: 0;
+}
+
+/*头部*/
+.navbar{
+  height: 80px;
+  margin: 0 auto;
+}
+
+.navL{
+  float: left;
+}
+
+.navL .logo,.footer-wrap .logo{
+  display: inline-block;
+  font-size: 22px;
+  line-height:22px;
+  margin: 29px 0;
+  
+}
+
+.navL .logo-n,.footer-wrap .logo-n{
+  display: inline-block;
+  font-weight: bolder;
+  padding-right:10px;
+  margin-right: 10px;
+  border-right: 1px solid #39a030;
+  color: #39a030;
+}
+
+.navL .login,.navL .attention, .navL .fans{
+  display: inline-block;
+}
+.navL .attention{
+  padding: 0 5px;
+  height: 22px;
+  margin: 0 10px 0 30px;
+  border-radius: 2px;
+  color:#fff;
+  background: #39a030;
+}
+
+.navL .follow:hover{
+  background: #42BA73;
+}
+
+.navL .userFoll{
+  display: none;
+  color: #000;
+  background: #ecebeb;
+  border: 1px solid #ccc;
+}
+
+.navL .userFoll:hover{
+  background: #fff;
+}
+
+.navL .userFoll .unfollow{
+  color: #666;
+}
+
+.navL .userFoll:hover .unfollow{
+  color: #42BA73;
+  text-decoration: underline;
+}
+
+.navL .userFoll::before{
+  content: '\2713';
+}
+
+.navR{
+  float: right;
+}
+
+.navR li{
+  display: inline-block;
+  font-size: 14px;
+  margin-top:30px;
+  width: auto;
+  height: 20px;
+  margin-left:30px;
+}
+
+.navR li a:hover{
+  color:#39a030;
+}
+.navR .search{
+  width: 20px;
+  background:url('../imgs/search.png') no-repeat;
+}
+
+.navR .search:hover{
+  background:url('../imgs/search-hover.png') no-repeat center bottom;
+}
+
+/*登录弹窗*/
+.login-mask{
+  display: none;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.login-mask .login-pop{
+  position: absolute;
+  top:50%;
+  left:50%;
+  width: 400px;
+  height: 300px;
+  font-size: 22px;
+  color: #666;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background: #fff;
+  border-radius: 6px;
+}
+
+.login-pop .login-title{
+  height: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.login-pop .login-title .login-close{
+  display: inline-block;
+  position: absolute;
+  top:0;
+  right: 5px;
+  font-size: 30px;
+  cursor: default;
+}
+
+.login-pop label{
+  display: inline-block;
+  width: 80px;
+  font-size: 18px;
+  margin-left: 40px;
+}
+
+.login-pop input{
+  width:200px;
+  height: 30px;
+  margin-top:30px;
+  padding-left: 10px;
+  border:1px solid #ccc;
+}
+
+.login-pop .login-btn,.login-pop .login-cal{
+  width: 100px;
+  height: 35px;
+  font-size: 18px;
+  color: #666;
+  margin: 30px 0 40px 60px;
+}
+
+.login-pop .login-btn:hover,.login-pop .login-cal:hover{
+  background: #42BA73;
+  color: #fff;
+}
+
+/*轮播图*/
+.slide{
+  height: 460px;
+  position: relative;
+  background: #eee;
+}
+
+.slide .pic-list{
+  height: 460px; 
+}
+
+.slide .pic-list li{
+  display: none;
+  position: relative;
+  opacity: 0;
+  filter: alpha(opacity = 0);
+  height: 460px;
+  width: 100%;
+}
+
+.slide .pic-list .show-on{
+  display: inline;
+  opacity: 1;
+  filter: alpha(opacity = 100);
+}
+
+.slide img{
+  width: 100%;
+  height: 460px;
+}
+
+.slide .icon-list{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide .icon-list li{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  background: #666;
+  border-radius: 50%;
+}
+
+.slide .icon-list li.active{
+  background: #fff;
+}
+
+
+/*三大课程网站*/
+.lesson-list{
+  display: flex;
+  /*height: 240px;*/
+  margin: 0 auto;
+}
+
+.lesson{
+  flex:1;
+  position: relative;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.lesson img, .lesson .details{
+  float: left;
+  
+}
+
+.lesson .details{
+  width: 60%;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.lesson .details h3{
+  font:  20px 'Microsoft YaHei';
+}
+
+.lesson .details p{
+  /*height: 90px;*/
+  margin: 10px 0 20px 0;
+  line-height: 1.5;
+}
+
+.lesson .details .more{
+  position: absolute;
+  bottom: 35px;
+  left: 120px;
+}
+
+.lesson .details .more:hover{
+  text-decoration: underline;
+}
+
+/*照片展示*/
+.img-skim img{
+  float: left;
+  width: 19.8%;
+  height: auto;
+  margin-right: 0.2%;
+}
+.img-skim img:last-child{
+  margin: 0;
+}
+
+/*详细课程*/
+.course{
+  background: #F8F8F8;
+}
+.course-wrap{
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.course-wrap .ls{
+  float: left;
+}
+
+.course-wrap .allcourse{
+
+}
+
+.course-wrap .hot{
+  width: 225px;
+  
+}
+
+.course-wrap .category .btn.active{
+  color: #fff;
+  background: #39a030;
+}
+
+.course-wrap .category{
+  display: block;
+  font-size: 0;
+  margin-bottom: 30px;
+}
+.course-wrap .category .btn{
+  width: 200px;
+  height: 50px;
+  background: #fff;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #666;
+  box-shadow: 0 1px 1px #ccc;
+}
+.course-wrap .category .btn:hover{
+  color: #fff;
+  background: #39a030;
+}
+
+/*全部课程*/
+.course-wrap .cus li{
+  float: left;
+  width: 225px;
+  height: 236px;
+  background: #fff;
+  font-size: 12px;
+  line-height: 2.0;
+  margin:0 20px 20px 0; 
+  box-shadow: 0 1px 2px #ecebeb;
+}
+
+.course-wrap .cus li:hover{
+  box-shadow: 0 0 5px 3px #ccc;
+}
+.course-wrap li:hover h4{
+  color:#39a030;
+} 
+
+.course-wrap  li img{
+  width: 225px;
+  height: 125px;
+}
+
+.course-wrap  li .cus-info{
+  padding:5px;
+}
+
+.course-wrap  li h4{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.course-wrap  li span{
+  color:#666;
+}
+
+.course-wrap  li .user{
+  max-width: 40px;
+  height: 16px;
+  color:#666;
+  padding-left:16px;
+  line-height: 1.2;
+  margin: 4px 0;
+  background: url('../imgs/user.png') no-repeat left bottom;
+  border:1px solid #ccc;
+  border-radius: 4px;
+}
+
+.course-wrap  li .price{
+  color: #ff3f00;
+  font-weight: bolder;
+}
+
+.course-wrap  li.cus-li{
+  position: relative;
+}
+
+.course-wrap  li .cus-detail{
+  display: none;
+  position: absolute;
+/*  top: 0;
+  left:245px;*/
+  top: 236px;
+  left: 0;
+  width: 470px;
+  background: #fff;
+  box-shadow: 0 0 1px 1px #ccc;
+  z-index: 999;
+}
+
+.course-wrap  li  .cus-detail > p{
+  width:100%;
+  height: auto;
+  padding: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: #eee;
+}
+
+.course-wrap .cus-detail img{
+  float: left;
+  margin: 20px;
+}
+
+.course-wrap .cus-detail .person{
+  background: url('../imgs/user.png') no-repeat left center;
+  padding-left: 20px;
+}
+
+.course-wrap .cus-detail .detail-info{
+  float: left;
+  margin-top:20px;
+  width: 185px;
+  color: #666;
+}
+
+.course-wrap .detail-info h3{
+  font-size:20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+
+/*分页*/
+.course-wrap .page{
+  margin:20px 20px 0 0;
+}
+.course-wrap .page .btn{
+  float: right;
+  width: 30px;
+  height: 20px;
+  font-weight: bolder;
+  background: #9fd7b2;
+  color:#fff;
+}
+
+.course-wrap .page .btn:hover{
+  background: #42BA73;
+}
+
+.course-wrap .page ul{
+  float: right;
+}
+.course-wrap .page li{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  text-align: center;
+  line-height: 20px;
+  cursor: default;
+}
+
+.course-wrap .page li.active{
+  color:  #39a030;
+}
+
+.course-wrap .page li:hover{
+  color: #fff;
+  background:  #9fd7b2;
+}
+
+.course-wrap .page .prev{
+  margin-right: 10px;
+}
+.course-wrap .page .next{
+  margin-left: 10px;
+}
+
+
+/*侧边栏*/
+.course-wrap .hot .hot-title{
+  width: 205px;
+  height: 55px;
+  background: #fff;
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #666;
+  line-height: 50px; 
+  padding-left: 20px;
+}
+
+.course-wrap .hot .hot-indu{
+  font-size: 16px;
+  color: #666;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.course-wrap .hot-indu img{
+  width: 185px;
+  margin-top: 10px;
+}
+
+.course-wrap .video-mask{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.course-wrap .video-pop{
+  position: absolute;
+  top:50%;
+  left:50%;
+  width: 800px;
+  height: 500px;
+  font-size: 26px;
+  color: #666;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background: #fff;
+  /*border-radius: 6px;*/
+}
+
+.course-wrap .video-pop .video-close{
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top:5px;
+  cursor: default;
+}
+
+.course-wrap .video-pop video{
+  width: 760px;
+  margin: 40px 20px 0;
+}
+
+.course-wrap .hot .hot-ls{
+  width: 205px;
+  padding: 10px;
+  background: #fff;
+}
+
+.course-wrap .hot-ls li{
+  height: 50px;
+  padding: 5px;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.course-wrap .hot-ls img{
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+
+.course-wrap .hot-ls .title{
+  float: left;
+  width: 135px;
+  line-height: 2;
+  padding: 0 0 10px 10px;
+}
+
+.course-wrap .hot-ls h3{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.course-wrap .hot-ls .person{
+  width: 30px;
+  font-size: 12px;
+  color: #666;
+  padding-left:15px;
+  background: url('../imgs/user.png') no-repeat left center;
+}
+
+
+
+
+
+
+/*底部*/
+.footer{
+  height: 260px;
+  background: #2c3339;
+}
+
+.footer-wrap{
+  width: 960px;
+  margin: 0 auto;
+}
+
+.footer-wrap .ft{
+  float:left;
+  margin-top: 60px;
+  color:#a2a4a5;
+}
+
+.footer-wrap .ft span{
+  line-height: 25px;
+}
+
+.footer-wrap .ft a{
+  color:#a2a4a5;
+  line-height: 25px;
+}
+
+.footer-wrap .ft a:hover{
+  text-decoration: underline;
+}
+
+.footer-wrap .info{
+  width: 560px;
+}
+
+.footer-wrap .info .logo{
+  color: #39a030;
+  margin: 10px 0 20px 0;
+}
+
+.footer-wrap .info p{
+  line-height: 25px;
+}
+
+.footer-wrap .link{
+  width: 150px;
+}
+
+.footer-wrap .contact{
+  width: 100px;
+}
+
+.footer-wrap .contact .blog{
+  padding-right: 25px;
+  background: url('../imgs/weibo.png') no-repeat right center;
+}
+
+.footer-wrap .more{
+  width: 150px;
+}
