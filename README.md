@@ -96,3 +96,11 @@
 > [源码地址](https://github.com/visugar/FrontEnd-examples/blob/master/12%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/index.html)
 
 > [预览地址](http://visugar.com/FrontEnd-examples/12%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/index.html)（chrome下有效）
+
+### 17. 网易前端微专业的最终大作业
++ 这是一个网易微专业的最后的大作业，为一个完整的应用页面，涉及到向后台请求数据，使用cookie及宽窄屏效果切换等，doc中给出了相关视觉稿及数据文档。
+
+> [源码地址](https://github.com/visugar/FrontEnd-examples/tree/master/17web-practice)
+
+> [预览地址](http://visugar.com/FrontEnd-examples/17web-practice/index.html)
+
