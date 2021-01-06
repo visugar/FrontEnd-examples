@@ -1,9 +1,9 @@
 //****************针对第三种方式的具体js实现部分******************//
 //****************所使用的数据是city02.js******************//
 
-var addrShow03 = $('addr-show03');
-var dataOrder = $('data-order').querySelectorAll('li');
-var dataShow = $('data-show');
+var addrShow03 = document.getElementById('addr-show03');
+var dataOrder = document.getElementById('data-order').querySelectorAll('li');
+var dataShow = document.getElementById('data-show');
 
 (function init() {
     showHotCity();

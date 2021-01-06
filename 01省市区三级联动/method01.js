@@ -1,17 +1,10 @@
 //****************针对第一种方式的具体js实现部分******************//
 //****************所使用的数据是city.js******************//
-
-/*根据id获取对象*/
-function $(str) {
-    return document.getElementById(str);
-}
-
-var addrShow = $('addr-show');
 var btn = document.getElementsByClassName('met1')[0];
-var prov = $('prov');
-var city = $('city');
-var country = $('country');
-
+var addrShow = document.getElementById('addr-show');
+var prov = document.getElementById('prov');
+var city = document.getElementById('city');
+var country = document.getElementById('country');
 
 /*用于保存当前所选的省市区*/
 var current = {
@@ -26,8 +19,7 @@ var current = {
     var len = provice.length;
     for (var i = 0; i < len; i++) {
         var provOpt = document.createElement('option');
-        provOpt.innerText = provice[i]['name'];
-        provOpt.value = i;
+        provOpt.value = provOpt.innerText = provice[i]['name'];
         prov.appendChild(provOpt);
     }
 })();
@@ -37,17 +29,26 @@ function showCity(obj) {
     var val = obj.options[obj.selectedIndex].value;
     if (val != current.prov) {
         current.prov = val;
-        addrShow.value = '';
+        addrShow.value = null;
         btn.disabled = true;
     }
-    //console.log(val);
+
+    //查找省的索引
+    var len = provice.length;
+    let provIndex = 0;
+    for (var i = 0; i < len; i++) {
+        if (val == provice[i]['name']) {
+            provIndex = i;
+        }
+    }
+
     if (val != null) {
         city.length = 1;
-        var cityLen = provice[val]["city"].length;
+        var cityLen = provice[provIndex]["city"].length;
+
         for (var j = 0; j < cityLen; j++) {
             var cityOpt = document.createElement('option');
-            cityOpt.innerText = provice[val]["city"][j].name;
-            cityOpt.value = j;
+            cityOpt.value = cityOpt.innerText = provice[provIndex]["city"][j].name;
             city.appendChild(cityOpt);
         }
     }
@@ -57,17 +58,42 @@ function showCity(obj) {
 function showCountry(obj) {
     var val = obj.options[obj.selectedIndex].value;
     current.city = val;
+
+    var val = obj.options[obj.selectedIndex].value;
+    current.city = val;
+    //查找省的索引
+    var provLen = provice.length;
+    let provIndex = 0;
+    for (var i = 0; i < provLen; i++) {
+        if (current.prov == provice[i]['name']) {
+            provIndex = i;
+            break;
+        }
+    }
+
+
+    //查找城市的索引
+    var cityLen = provice[provIndex]["city"].length;
+    let cityIndex = 0;
+    for (var i = 0; i < cityLen; i++) {
+        if (current.city == provice[provIndex]["city"][i].name) {
+            cityIndex = i;
+            break;
+        }
+    }
+
+
     if (val != null) {
         country.length = 1; //清空之前的内容只留第一个默认选项
-        var countryLen = provice[current.prov]["city"][val].districtAndCounty.length;
-        if(countryLen == 0){
-            addrShow.value = provice[current.prov].name + '-' + provice[current.prov]["city"][current.city].name;
+        var countryLen = provice[provIndex]["city"][cityIndex].districtAndCounty.length;
+        if (countryLen == 0) {
+            addrShow.value = current.prov + '-' + current.city;
             return;
         }
         for (var n = 0; n < countryLen; n++) {
             var countryOpt = document.createElement('option');
-            countryOpt.innerText = provice[current.prov]["city"][val].districtAndCounty[n];
-            countryOpt.value = n;
+            countryOpt.innerText = provice[provIndex]["city"][cityIndex].districtAndCounty[n];
+            countryOpt.value = provice[provIndex]["city"][cityIndex].districtAndCounty[n];
             country.appendChild(countryOpt);
         }
     }
@@ -75,7 +101,7 @@ function showCountry(obj) {
 
 /*选择县区之后的处理函数*/
 function selecCountry(obj) {
-    current.country = obj.options[obj.selectedIndex].value;
+    current.country = obj.options[obj.selectedIndex].key;
     if ((current.city != null) && (current.country != null)) {
         btn.disabled = false;
     }
@@ -83,5 +109,5 @@ function selecCountry(obj) {
 
 /*点击确定按钮显示用户所选的地址*/
 function showAddr() {
-    addrShow.value = provice[current.prov].name + '-' + provice[current.prov]["city"][current.city].name + '-' + provice[current.prov]["city"][current.city].districtAndCounty[current.country];
+    addrShow.value = current.prov + '-' + current.city + '-' + current.country;
 }
