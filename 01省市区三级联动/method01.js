@@ -29,23 +29,23 @@ function showCity(obj) {
     var val = obj.options[obj.selectedIndex].value;
     if (val != current.prov) {
         current.prov = val;
-        addrShow.value = null;
+        addrShow.value = '';
         btn.disabled = true;
-    }
-
-    //查找省的索引
-    var len = provice.length;
-    let provIndex = 0;
-    for (var i = 0; i < len; i++) {
-        if (val == provice[i]['name']) {
-            provIndex = i;
-        }
-    }
-
-    if (val != null) {
         city.length = 1;
-        var cityLen = provice[provIndex]["city"].length;
+        country.length = 1;
+    }
 
+    if (val != '') {
+        //查找省的索引
+        var len = provice.length;
+        let provIndex = 0;
+        for (var i = 0; i < len; i++) {
+            if (val == provice[i]['name']) {
+                provIndex = i;
+            }
+        }
+
+        var cityLen = provice[provIndex]["city"].length;
         for (var j = 0; j < cityLen; j++) {
             var cityOpt = document.createElement('option');
             cityOpt.value = cityOpt.innerText = provice[provIndex]["city"][j].name;
@@ -57,10 +57,13 @@ function showCity(obj) {
 /*根据所选的城市来显示县区列表*/
 function showCountry(obj) {
     var val = obj.options[obj.selectedIndex].value;
-    current.city = val;
+    if (val != current.city) {
+        current.city = val;
+        addrShow.value = '';
+        btn.disabled = true;
+        country.length = 1; //清空之前的内容只留第一个默认选项
+    }
 
-    var val = obj.options[obj.selectedIndex].value;
-    current.city = val;
     //查找省的索引
     var provLen = provice.length;
     let provIndex = 0;
@@ -70,7 +73,6 @@ function showCountry(obj) {
             break;
         }
     }
-
 
     //查找城市的索引
     var cityLen = provice[provIndex]["city"].length;
@@ -82,9 +84,7 @@ function showCountry(obj) {
         }
     }
 
-
-    if (val != null) {
-        country.length = 1; //清空之前的内容只留第一个默认选项
+    if (val != '') {
         var countryLen = provice[provIndex]["city"][cityIndex].districtAndCounty.length;
         if (countryLen == 0) {
             addrShow.value = current.prov + '-' + current.city;
@@ -101,8 +101,8 @@ function showCountry(obj) {
 
 /*选择县区之后的处理函数*/
 function selecCountry(obj) {
-    current.country = obj.options[obj.selectedIndex].key;
-    if ((current.city != null) && (current.country != null)) {
+    current.country = obj.options[obj.selectedIndex].value;
+    if ((current.city != '') && (current.country != '')) {
         btn.disabled = false;
     }
 }
