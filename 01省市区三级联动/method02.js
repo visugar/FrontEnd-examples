@@ -1,10 +1,12 @@
 //****************针对第二种方式的具体js实现部分******************//
 //****************所使用的数据是city.js******************//
 
-var addrShow02 = $('addr-show02');  //最终地址显示框
-var titleWrap = $('title-wrap').getElementsByTagName('LI');
-var addrWrap = $('addr-wrap');   //省市区显示模块
+var addrShow02 = document.getElementById('addr-show02');  //最终地址显示框
+var titleWrap = document.getElementById('title-wrap').getElementsByTagName('LI');
+var addrWrap = document.getElementById('addr-wrap');   //省市区显示模块
 var btn2 = document.getElementsByClassName('met2')[0];  //确定按钮
+
+
 
 var current2 = {
     prov: '',
