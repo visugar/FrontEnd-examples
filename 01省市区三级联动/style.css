@@ -16,7 +16,7 @@ legend{
     font-weight: bold;
 }
 
-#addr-show, #addr-show02,#addr-show03{
+#addr-show, #addr-show02,#addr-show03,#addr-show-number{
     width: 200px;
     height: 25px;
     margin-bottom: 10px;
